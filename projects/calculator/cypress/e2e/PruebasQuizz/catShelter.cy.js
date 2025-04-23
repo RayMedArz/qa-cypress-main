@@ -14,12 +14,8 @@ describe('template spec', () => {
       cy.get(':nth-child(1) > label > input').check()
       cy.get('.text-center > .form_btn').click()
 
-      // Buscar y hacer clic en el ícono de la casa para cada gato
       cy.get('.collection').then((catList) => {
-        // Buscar el primer gato
         cy.wrap(catList).contains(catData.name1).parent().find('.new_home').click()
-
-        // Buscar el segundo gato
         cy.wrap(catList).contains(catData.name2).parent().find('.new_home').click()
       })
     })

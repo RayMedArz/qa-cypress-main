@@ -1,7 +1,7 @@
 describe('template spec', () => {
   it('passes', () => {
     cy.visit('https://thelab.boozang.com/formFill')
-    cy.fixture('form1').as('formData') // Cargar los datos del fixture
+    cy.fixture('form1').as('formData') 
     cy.get('@formData').then((formData) => {
       cy.get(':nth-child(1) > input').type(formData.fName)
       cy.get(':nth-child(2) > input').type(formData.lName)
