@@ -16,6 +16,7 @@ describe('template spec', () => {
 
       cy.get('.collection').then((catList) => {
         cy.wrap(catList).contains(catData.name1).parent().find('.new_home').click()
+        cy.wait(2000)
         cy.wrap(catList).contains(catData.name2).parent().find('.new_home').click()
       })
     })
