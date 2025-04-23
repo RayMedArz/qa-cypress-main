@@ -1,0 +1,15 @@
+describe('template spec', () => {
+    it('passes', () => {
+      cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
+      cy.get(':nth-child(3)>.btn').click()
+      cy.get('[ng-class="btnClass1"]').click()
+      cy.get(':nth-child(1) > .form-control').type('John')
+      cy.get(':nth-child(2) > .form-control').type('Doe')
+      cy.get(':nth-child(3) > .form-control').type('30000')
+      cy.get('form.ng-dirty > .btn').click()
+      cy.get('[ng-class="btnClass2"]').click()
+      cy.get('#userSelect').select('John Doe')
+      cy.get('#currency').select('Dollar')
+      cy.contains('Process').click()
+    })
+  })
